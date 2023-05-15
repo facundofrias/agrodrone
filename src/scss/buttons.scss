@@ -1,0 +1,53 @@
+.btn-primary {
+  padding: 7px;
+  background-color: #DDECDE;
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden; /* para que el gradiente no se salga del botón */
+  z-index: 1; /* para que el texto se muestre por encima del gradiente */
+}
+
+/* Gradiente lineal de izquierda a derecha */
+.btn-primary::before {
+  border-radius: 7px;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to left, #67BB6C, transparent, transparent);
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-out;
+  z-index: -1;
+}
+
+/* Gradiente lineal de derecha a izquierda */
+.btn-primary::after {
+  border-radius: 7px;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #67BB6C, transparent, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+  z-index: -1;
+}
+
+/* Gradientes se muestran al hacer hover */
+.btn-primary:hover::before,
+.btn-primary:hover::after {
+  transform: scaleX(1);
+}
+
+.btn-primary:hover {
+  cursor: pointer;
+}

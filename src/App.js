@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
@@ -9,6 +9,8 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+          <button className='btn-primary'>Choose a drone</button>
+          <button className='btn-secondary'></button>
         <a
           className="App-link"
           href="https://reactjs.org"
