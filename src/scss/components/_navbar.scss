@@ -1,0 +1,30 @@
+.navbar {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100px; /* ajusta la altura según tus necesidades */
+}
+
+.red, .green, .blue {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(100% / 3);
+  transform-origin: top left;
+  transform: skewX(-12deg); /* ajusta el ángulo de inclinación según tus necesidades */
+}
+
+.red {
+  left: 0;
+  background-color: red;
+}
+
+.green {
+  left: calc(100% / 3);
+  background-color: green;
+}
+
+.blue {
+  left: calc(2 * (100% / 3));
+  background-color: blue;
+}

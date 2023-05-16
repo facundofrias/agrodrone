@@ -19,17 +19,6 @@
     &:hover {
       border-color: #28572D;
     }
-
-    .arrow-down {
-      width: 0;
-      height: 0;    
-      position: absolute;
-      right: 28px;
-      top: 6px;
-      border-top: 5px solid #888;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
   }
 
   .select-box.open {
