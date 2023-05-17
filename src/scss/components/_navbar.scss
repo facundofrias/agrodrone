@@ -5,26 +5,35 @@
   height: 100px; /* ajusta la altura según tus necesidades */
 }
 
-.red, .green, .blue {
+.main-color,
+.light-grayish-blue,
+.secondary-color {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: calc(100% / 3);
   transform-origin: top left;
-  transform: skewX(-12deg); /* ajusta el ángulo de inclinación según tus necesidades */
+  transform: skewX(12deg);
 }
 
-.red {
-  left: 0;
-  background-color: red;
+.main-color {
+  width: calc(48% + 20px);
+  left: -20px;
+  background-color: var(--main-color);
+  box-shadow: 5px 0 5px rgba(40, 85, 48, 0.5);
+  z-index: 2;
 }
 
-.green {
-  left: calc(100% / 3);
-  background-color: green;
+.light-grayish-blue {
+  width: 10%;
+  left: calc(48%);
+  background-color: var(--light-grayish-blue);
+  box-shadow: 5px 0 5px rgba(40, 85, 48, 0.5);
+  z-index: 1;
+  
 }
 
-.blue {
-  left: calc(2 * (100% / 3));
-  background-color: blue;
+.secondary-color {
+  width: 65%;
+  left: 55%;
+  background-color: var(--secondary-color);
 }
