@@ -1,13 +1,16 @@
 .navbar {
   position: relative;
+  padding: 10px 0;
+  display: flex;
   overflow: hidden;
   width: 100%;
-  height: 133px; /* ajusta la altura según tus necesidades */
+  height: 173px; /* ajusta la altura según tus necesidades */
 }
 
-.main-color,
-.light-grayish-blue,
-.secondary-color {
+.first-navbar-container,
+.second-navbar-container,
+.third-navbar-container {
+  padding-top: 10px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -15,24 +18,54 @@
   transform: skewX(7deg);
 }
 
-.main-color {
+.first-navbar-container {
   width: calc(48% + 20px);
   left: -20px;
+  padding: 0 20px;
   background-color: var(--main-color);
   box-shadow: 3px 0 3px rgba(40, 85, 48, 0.5);
-  z-index: 2;
+  z-index: -1;
 }
 
-.light-grayish-blue {
+.second-navbar-container {
   width: 10%;
   left: calc(48%);
   background-color: var(--light-grayish-blue);
   box-shadow: 3px 0 3px rgba(1, 19, 4, 0.6);
-  z-index: 1;
+  z-index: -2;
 }
 
-.secondary-color {
+.third-navbar-container {
   width: 65%;
   left: 55%;
   background-color: var(--secondary-color);
+  z-index: -3;
+}
+
+.navbar-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;  
+}
+
+.assistant-group-container {
+  padding: 0 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--secondary-color);
+
+  & .drone-icon {
+    width: 2.3rem;
+  }
+
+  & .assistant-group {
+    font-size: 12px;
+    vertical-align: top;
+  }
+}
+
+.options-menu svg {
+  padding: 0 7px;
+  color: var(--main-color);
 }

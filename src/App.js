@@ -3,16 +3,14 @@ import './App.scss';
 
 import Navbar from './components/navbar/Navbar';
 import CustomSelect from './components/customSelect/CustomSelect';
-import { droneIcon } from './assets/img/icons/drone.png';
 
 
 
 function App() {
   return (
     <div className="App">
-    <img src="./assets/img/icons/drone.png" alt="Drone icon" />
       <Navbar/>
-      <button className='btn-primary'>Choose a drone</button>
+      {/* <button className='btn-primary'>Choose a drone</button>
       <div className='separator'></div>
       <button className='btn-secondary' >Buy now</button>
       <div className='separator'></div>
@@ -20,7 +18,7 @@ function App() {
       <div className='separator'></div>
       <input type="checkbox" className='radio-checkbox-btn'/>
       <div className='separator'></div>
-      <CustomSelect/>
+      <CustomSelect/> */}
     </div>
   );
 }
