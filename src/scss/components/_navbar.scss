@@ -1,55 +1,59 @@
-.navbar {
-  position: relative;
-  padding: 10px 0;
-  display: flex;
-  overflow: hidden;
+.caja {
   width: 100%;
-  height: 173px; /* ajusta la altura según tus necesidades */
+  height: 1300px;
+  background-color: red;
 }
 
-.first-navbar-container,
-.second-navbar-container,
-.third-navbar-container {
+.caja2 {
+  width: 100%;
+  height: 1300px;
+  background-color: blue;
+}
+
+.navbar-container {
+  z-index: 1;
+  top: 0;
+  height: 70px;
+  width: 100%;
+}
+
+.navbar {
+  margin: 0 auto;
+  padding: 10px 0;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  background-image: url("../../assets/img/navbar-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.first-divisor-container,
+.second-divisor-container,
+.third-divisor-container {
   padding-top: 10px;
-  position: absolute;
   top: 0;
   bottom: 0;
   transform-origin: top left;
-  transform: skewX(7deg);
 }
 
-.first-navbar-container {
-  width: calc(48% + 20px);
-  left: -20px;
-  padding: 0 20px;
-  background-color: var(--main-color);
-  box-shadow: 3px 0 3px rgba(40, 85, 48, 0.5);
-  z-index: -1;
+.first-divisor-container {
+  width: 46%;
+  max-width: 675px;
+  padding-left: 7px;
 }
 
-.second-navbar-container {
+.second-divisor-container {
   width: 10%;
-  left: calc(48%);
-  background-color: var(--light-grayish-blue);
-  box-shadow: 3px 0 3px rgba(1, 19, 4, 0.6);
-  z-index: -2;
 }
 
-.third-navbar-container {
-  width: 65%;
-  left: 55%;
-  background-color: var(--secondary-color);
-  z-index: -3;
-}
-
-.navbar-menu {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;  
+.third-divisor-container {
+  width: 50%;
 }
 
 .assistant-group-container {
-  padding: 0 7px;
+  max-width: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +69,60 @@
   }
 }
 
-.options-menu svg {
+.options-menu  {  
+  & svg {
+    padding: 0 7px;
+  }
+}
+
+.mobile-menu {
+  margin: 2px auto;
+  display: flex;
+  width: 98px;
+  flex-direction: column;
+  background-color: #e0dddd;
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-align: right;
+}
+
+.menu-option {
   padding: 0 7px;
-  color: var(--main-color);
+}
+
+.menu-option:hover {
+  font-weight: 700;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+.mobile-menu {
+  display: flex;
+}
+
+.hamburger-menu {
+  display: inline;
+  cursor: pointer;
+}
+
+@media (width > 768px) {
+
+  .second-divisor-container{
+    min-width: 100px;    
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .desktop-menu {
+    display: flex;
+    padding: 0 20px;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
 }

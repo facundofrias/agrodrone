@@ -1,0 +1,39 @@
+.test {
+  position: relative;
+  margin-top: 60px !important;
+  height: 120px; 
+  padding: 10px 0;
+  max-width: 1400px;
+  display: flex;
+  overflow: hidden;
+  height: 70px;
+}
+
+.drone-img-container {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+
+  & .navbar-drone-img {
+    width: 17rem;
+    height: 9rem;
+  }
+}
+
+
+@media (width > 768px) { 
+
+  .drone-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    margin-top: 60px;
+    top: 60px;
+  
+    & .navbar-drone-img {
+      width: 35rem;
+      height: 14rem;
+    }
+  }
+}
