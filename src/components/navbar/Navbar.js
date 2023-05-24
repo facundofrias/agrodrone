@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faScaleBalanced, faBox, faBars} from "@fortawesome/free-solid-svg-icons";
 import droneIcon from '../../assets/img/icons/drone.png';
+import AppDescription from "../AppDescription/AppDescription";
 
 const Navbar = () => {
   
@@ -68,6 +69,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <AppDescription />
+      <div className="caja"></div>
     </div>
   )
 }
