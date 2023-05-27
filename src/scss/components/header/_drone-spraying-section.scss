@@ -1,0 +1,64 @@
+.drone-img-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  & .navbar-drone-img {
+    width: 17rem;
+    height: 9rem;
+  }
+}
+
+.navbar-drone-img {
+  width: 17rem;
+  height: 9rem;
+}
+
+.drone-spraying-section {
+  
+  &.hide {
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+  }
+
+  &__description {
+    background-color: var(--main-color);
+  }
+
+  &__title {
+    padding: 5px 0 3px 0;
+  }
+
+  & ul {
+    list-style: disc;
+    list-style-position: inside;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & li {
+    display: list-item;
+  }
+}
+
+
+@media (width > 768px) { 
+
+  .drone-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1400px;
+  
+    & .navbar-drone-img {
+      width: 35rem;
+      height: 14rem;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.advantages {
+  display: grid;
+  padding: 1rem;
+
+  &__title {
+    font-size: 18px;
+  }
+}
+
+.advantage {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 14px;
+  background-color: #fff;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+  
+  &__description {
+    padding: 5px 0;
+  }
+
+  &__description,
+  &__item {
+    text-align: justify;
+    font-size: 14px;
+  }
+
+  &__list {
+    list-style: disc;
+    list-style-position: inside;
+    padding: 5px 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}

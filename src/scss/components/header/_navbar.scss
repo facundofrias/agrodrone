@@ -1,36 +1,23 @@
-.caja {
-  width: 100%;
-  height: 1300px;
-  background-color: red;
-}
-
-.caja2 {
-  width: 100%;
-  height: 1300px;
-  background-color: blue;
-}
-
-.navbar-container {
+.header {
   z-index: 1;
-  top: 0;
-  height: 70px;
+  position: sticky;
+  top: 0px;
   width: 100%;
+  padding: 0;
+  background-image: var(--mobile-background);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  margin: 0 auto;
-  padding: 10px 0;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-  background-image: url("../../assets/img/navbar-background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  &__menu {
+    margin: 0 auto;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .first-divisor-container,
@@ -73,17 +60,23 @@
   }
 }
 
-.options-menu  {  
+.options-menu  {
+  padding: 0 7px;
+  text-align: end;
+
   & svg {
     padding: 0 7px;
+    color: var(--main-color);
   }
 }
 
 .mobile-menu {
+  position: absolute;
+  right: 12px;
   margin: 2px auto;
   display: flex;
-  width: 98px;
   flex-direction: column;
+  width: 98px;
   background-color: #e0dddd;
   padding: 2px 5px;
   border-radius: 3px;
@@ -112,6 +105,10 @@
 }
 
 @media (width > 768px) {
+
+  .header {
+    background-image: var(--desktop-background);
+  }
 
   .second-divisor-container{
     min-width: 100px;    

@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "description": "The use of agrodrones in comparison with heavy equipment allows not to compact the soil and to carry out point treatments even in hard-to-reach areas of the field.",
+    "advantageList" : [
+      {
+        "id": 1,
+        "text": "SZR consumption from 5 l/hectare"
+      },
+      {
+        "id": 2,
+        "text": "Water saving up to 90%"
+      },
+      {
+        "id": 3,
+        "text": "Zero crop damage"
+      },
+      {
+        "id": 4,
+        "text": "No cost for heavy machinery and labor"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "description": "The augers create vertical airflow that ensures uniform application and prevents the formulation from rolling off the sheet. Thus making an even distribution.",
+    "advantageList" : [
+      {
+        "id": 1,
+        "text": "The size of the drop is 60-80 microns"
+      },
+      {
+        "id": 2,
+        "text": "Processing of tall crops"
+      },
+      {
+        "id": 3,
+        "text": "Work on wet soils after rain"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "description": "We provide field spraying services throughout Ukraine. When processing large areas, we will provide several groups that will quickly carry out the work.",
+    "advantageList" : [
+      {
+        "id": 1,
+        "text": "Processing speed 80-100 hectares / shift or 10-12 hectares / hour"
+      },
+      {
+        "id": 2,
+        "text": "Administration in hard-to-reach places"
+      },
+      {
+        "id": 3,
+        "text": "We work 24/7, even at night"
+      }
+    ]
+  }
+]

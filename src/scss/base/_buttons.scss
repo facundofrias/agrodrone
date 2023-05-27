@@ -7,7 +7,7 @@
   border-radius: 7px;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
 }
 
 .btn-primary:disabled,
@@ -29,7 +29,7 @@
   transform-origin: right;
   transform: scaleX(0);
   transition: transform 0.3s ease-out;
-  z-index: -1;
+  z-index: -2;
 }
 
 .btn-primary::after,
@@ -44,7 +44,7 @@
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease-out;
-  z-index: -1;
+  z-index: -2;
 }
 
 .btn-primary:hover,

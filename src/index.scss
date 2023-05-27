@@ -2,7 +2,7 @@
 /* utils */
 @use './scss/utils/variables';
 @use './scss/utils/mixins';
-@use './scss/utils/separator';
+@use './scss/utils/loader';
 
 
 /* base */
@@ -13,6 +13,16 @@
 @use './scss/base/radio-checkbox';
 @use './scss/base/dropdown';
 
-@use './scss/components/navbar';
-@use './scss/components/app-description';
+/* header */
+@use './scss/components/header/header';
+@use './scss/components/header/navbar';
+@use './scss/components/header/drone-spraying-section';
+// @use './scss/components/header/drone-image';
 
+/* main */
+@use './scss/components/main/advantage-section/advantages';
+
+
+/* products */
+@use './scss/components/products/product';
+@use './scss/components/products/products-list';

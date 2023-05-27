@@ -1,15 +1,14 @@
-import logo from './logo.svg';
 import './App.scss';
-
-import Navbar from './components/navbar/Navbar';
-import AppDescription from './components/AppDescription/AppDescription';
-
-
+import Header from './components/header/Header';
+import DroneImage from './components/header/drone-spraying-section/DroneImage';
+import DroneSprayingSection from './components/header/drone-spraying-section/DroneSprayingSection';
+import Main from './components/main/Main';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Header />
+      <Main />
       {/* <AppDescription/>
       <div className='caja'></div> */}
       
