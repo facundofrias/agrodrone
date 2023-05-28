@@ -9,7 +9,7 @@
     justify-content: space-between;
     padding: 8px 12px;
     border-bottom: 2px solid #ccc;
-    border-color: var(--subsidiary-color);
+    border-color: var(--subsidiary);
     background-color: #fff;
     cursor: pointer;
     outline: none;
@@ -56,7 +56,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: var(--main-color);
+        background-color: var(--main);
       }
 
       &.selected {

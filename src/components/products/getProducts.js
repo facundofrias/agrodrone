@@ -1,4 +1,4 @@
-import { db } from "../../FirebaseAgrodrone/database";
+import { db } from "../FirebaseAgrodrone/database";
 import { getDocs, collection } from "firebase/firestore";
 
 export const getProducts = async () => {

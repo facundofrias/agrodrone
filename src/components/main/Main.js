@@ -1,4 +1,5 @@
-import ProductsList from "../products/products-list/ProductsList";
+import Carousel from "../main-page/carousel/Carousel";
+import ProductsList from "../main-page/products-list/ProductsList";
 import AdvantagesSection from "./advantages-section/AdvantagesSection";
 
 const Main = () => {
@@ -6,6 +7,7 @@ const Main = () => {
     <main>
       <AdvantagesSection />
       <ProductsList />
+      <Carousel />
     </main>
   );
 }

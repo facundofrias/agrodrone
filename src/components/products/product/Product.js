@@ -2,8 +2,17 @@ const Product = ( {name, camera, estimatedFlightTime, controlKit, code, price, g
   
   return (
     <div className="product">
+      <div className="product__labels">
+        { isTop && 
+          <div className="product__top">Top</div>
+        }
+        {
+          isSale && 
+          <div className="product__sale">Sale</div>
+        }
+      </div>
       <img className="product__img" src={imageUrl} alt="Drone image" />
-      <p className="product__title">{name}</p>
+      <p className="product__title">{`Agrodrone ${name}`}</p>
       <div className="product__details">
         <p className="product__camera">{`Camera: ${camera ? 'yes' : 'no'}`}</p>
         <p className="product__estimated-flight-time">{`Estimated flight time: ${estimatedFlightTime}min`}</p>
@@ -12,19 +21,22 @@ const Product = ( {name, camera, estimatedFlightTime, controlKit, code, price, g
         <p className="product__code">{`Product code: ${code}`}</p>
       </div>
       <div className="product__separator"></div>
-      <div>
-        <div>
+      <div className="product__buying">
+        <div className="product__pricing">
           {
             isSale ?
             <>
-              <p className="product__real-price">{price}</p>
-              <p className="product__sale-price">{price - (price * 0.2)}</p>
+              <p className="product__real-price">{`$${price}`}</p>
+              <p className="product__sale-price">{`$${price - (price * 0.2)}`}</p>
             </> 
             :
             <>
-              <p className="product__price">{price}</p>
+              <p className="product__price">{`$${price}`}</p>
             </>
           }
+        </div>
+        <div className="product__actions">
+          <button className="btn-secondary">Buy now</button>
         </div>
       </div>
     </div>

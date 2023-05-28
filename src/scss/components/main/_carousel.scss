@@ -1,0 +1,66 @@
+.carousel {
+  margin: 2rem auto;
+  position: relative;
+  width: 100%;
+  max-width: 50rem;
+  height: 300px;
+
+  &__slide {
+    display: flex;
+    transition: transform 0.3s ease;
+    
+    &-image {
+      width: 100%;
+      height: auto;
+    }
+    
+    &-caption {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 16px;
+      color: white;
+    }
+  }
+
+  &__slide-item {
+    position: relative;
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: none;
+    transition: display 0.3s ease;
+
+    &.active {
+      display: block;
+    }
+
+  }
+
+  &__prev-button,
+  &__next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 14px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__prev-button {
+    left: 10px;
+  }
+
+  &__next-button {
+    right: 10px;
+  }
+}

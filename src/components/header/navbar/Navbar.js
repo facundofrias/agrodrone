@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faScaleBalanced, faBox, faBars} from "@fortawesome/free-solid-svg-icons";
 import droneIcon from '../../../assets/img/icons/drone.png';
-import DroneImage from "../drone-spraying-section/DroneImage";
 import DroneSprayingSection from "../drone-spraying-section/DroneSprayingSection";
 
 const Navbar = () => {
