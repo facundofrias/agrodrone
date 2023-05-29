@@ -3,16 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-const CustomSelect = () => {
+const CustomSelect = ( { options = [] }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  const options = [
-    { value: "", label: "Select an option" },
-    { value: "option1", label: "Option 1" },
-    { value: "option2", label: "Option 2" },
-    { value: "option3", label: "Option 3" },
-  ];
+  const allOptions = [{ value: "", label: "Select an option" }, ...options];
+
 
   const handleOptionChange = (value) => {
     setSelectedOption(value);
@@ -36,7 +32,7 @@ const CustomSelect = () => {
       </div>
       {isOpen && (
         <ul className="options">
-          {options.map((option) => (
+          {allOptions.map((option) => (
             <li
               key={option.value}
               className={`option ${selectedOption === option ? "selected" : ""}`}

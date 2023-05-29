@@ -1,0 +1,26 @@
+.footer {
+  padding: 1rem;
+  background-color: var(--secondary);
+  
+  & * {
+    color: var(--main);
+  }
+
+  &__arrow {
+    padding: 0 3px;
+    font-size: 15px;
+  }
+
+  &__menu {
+    
+    &-toggle {
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    &-item {
+      padding: 5px 0;
+    }
+  }
+
+}
