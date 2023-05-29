@@ -1,0 +1,38 @@
+.newsletter {
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 400px;
+
+  &__form {
+    margin: 0 auto;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    padding: 10px;
+    background-color: var(--main);
+  }
+}
+
+
+@media (width > 768px) {
+
+  .newsletter {
+    justify-content: center;
+    max-width: 1400px;
+
+    &__form-container {
+      align-self: center;
+    }
+
+    & img {
+      max-width: 500px;
+    }
+  }
+}

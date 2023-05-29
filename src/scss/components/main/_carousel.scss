@@ -3,7 +3,6 @@
   position: relative;
   width: 100%;
   max-width: 50rem;
-  height: 300px;
 
   &__slide {
     display: flex;
@@ -11,15 +10,19 @@
     
     &-image {
       width: 100%;
+      
       height: auto;
     }
     
     &-caption {
+      padding: 2px 4px;
       position: absolute;
       bottom: 10px;
       left: 10px;
       font-size: 16px;
+      text-align: justify;
       color: white;
+      background-color: rgba(0, 0, 0, 0.7);
     }
   }
 

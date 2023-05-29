@@ -1,0 +1,28 @@
+.news-section {
+
+
+  &__header,
+  .news {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: start;
+  }
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__see-all {
+    font-size: 18px;
+    svg {
+      padding-left: 5px;
+      font-size: 14px;
+    }
+  } 
+}
