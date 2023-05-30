@@ -1,5 +1,6 @@
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faFacebookSquare, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { useState } from "react";
 
 const Footer = () => {
@@ -33,11 +34,11 @@ const Footer = () => {
     { label: "Return and exchange", value: "returnAndExchange" },
   ]
   return (
-   <footer className="footer">
-      <div className="footer__menu-support">
+    <footer className="footer">
+      <div className="footer__menu-and-support">
         <div className={`footer__menu ${isMenuOpen ? "open" : ""}`}>
           <button className="footer__menu-toggle" onClick={toggleMenu}>
-            Menu
+            <span>Menu</span>
             {
               isMenuOpen ? (
                 <FontAwesomeIcon className="footer__arrow" icon={faChevronUp} />
@@ -62,7 +63,7 @@ const Footer = () => {
         </div>
         <div className={`footer__menu ${isSupportOpen ? "open" : ""}`}>
           <button className="footer__menu-toggle" onClick={toggleSupport}>
-          Support
+            <span>Support</span>
             {
               isSupportOpen ? (
                 <FontAwesomeIcon className="footer__arrow" icon={faChevronUp} />
@@ -86,8 +87,16 @@ const Footer = () => {
           )}
         </div>
       </div>
-      <div className="footer__info"></div>
-      <div className="footer__social-media"></div>
+      <div className="footer__info">
+        <span>Djipro</span>
+        <span>st. Voskresenskaya 43b</span>
+        <span>Dr_assistan@gmail.com</span>
+        <span>+38 (067) 399 55 93</span>
+      </div>
+      <div className="footer__social-media">
+        <FontAwesomeIcon className="footer__brand" icon={faFacebookSquare} />
+        <FontAwesomeIcon className="footer__brand" icon={faInstagram} />
+      </div>
     </footer>
   )
 }
