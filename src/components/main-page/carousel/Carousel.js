@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { getCarousel } from "./getCarousel";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 import Loader from "../../utils/loader/Loader";
 
 
@@ -49,10 +52,10 @@ const Carousel = () => {
                   className={`carousel__slide-item ${index === currentSlide ? "active" : ""}`}
                 >
                   <button className="carousel__prev-button" onClick={handlePrevSlide}>
-                    &lt;
+                    <FontAwesomeIcon icon={faChevronLeft} />
                   </button>
                   <button className="carousel__next-button" onClick={handleNextSlide}>
-                    &gt;
+                    <FontAwesomeIcon icon={faChevronRight} />
                   </button>
                   <img className="carousel__slide-image" src={image.imageUrl} alt={`Slide ${index + 1}`}/>
                   <div className="carousel__slide-caption">{offers[index]}</div>
