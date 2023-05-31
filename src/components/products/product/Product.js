@@ -1,17 +1,23 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faScaleBalanced, faBox, faBars} from "@fortawesome/free-solid-svg-icons";
+
 const Product = ( {name, camera, estimatedFlightTime, controlKit, code, price, gps, isSale, isTop, imageUrl} ) => {
   
   return (
     <div className="product">
-      <div className="product__labels">
-        { isTop && 
-          <div className="product__top">Top</div>
-        }
-        {
-          isSale && 
-          <div className="product__sale">Sale</div>
-        }
+      <div className="product__img-container">
+        <div className="product__labels">
+          { isTop && 
+            <div className="product__top">Top</div>
+          }
+          {
+            isSale && 
+            <div className="product__sale">Sale</div>
+          }
+        </div>
+        <img className="product__img" src={imageUrl} alt="Drone image" />
+        <FontAwesomeIcon className="product__icon" icon={faScaleBalanced} />
       </div>
-      <img className="product__img" src={imageUrl} alt="Drone image" />
       <p className="product__title">{`Agrodrone ${name}`}</p>
       <div className="product__details">
         <p className="product__camera">{`Camera: ${camera ? 'yes' : 'no'}`}</p>

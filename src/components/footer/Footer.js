@@ -17,22 +17,22 @@ const Footer = () => {
 
   const handleLinkClick = (link) => {
     console.log(`Clicked on ${link}`);
-    // Aquí puedes realizar acciones adicionales cuando se hace clic en un enlace
   };
 
   const menuItems = [
     { label: "Catalog", value: "catalog" },
     { label: "Training", value: "training" },
     { label: "About Us", value: "about" },
-    { label: "Contact", value: "contact" },
+    { label: "Contact", value: "contact" }
   ];
 
   const supportItems = [
     { label: "Support", value: "support" },
     { label: "Shipping and payment", value: "shippingAndPayment" },
     { label: "Lending terms", value: "lendingTerms" },
-    { label: "Return and exchange", value: "returnAndExchange" },
-  ]
+    { label: "Return and exchange", value: "returnAndExchange" }
+  ];
+
   return (
     <footer className="footer">
       <div className="footer__menu-and-support">

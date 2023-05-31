@@ -24,9 +24,9 @@ const News = () => {
     <div className="news-section">
       <div className="news-section__header">
         <span className="news-section__title">News</span>
-        <span className="news-section__see-all">See all 
+        <a className="news-section__see-all">See all 
           <FontAwesomeIcon className="products__chevron-right" icon={faChevronRight} />
-        </span>
+        </a>
       </div>
       { isLoading ? (
           <div className="modal">
