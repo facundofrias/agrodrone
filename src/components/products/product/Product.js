@@ -16,7 +16,7 @@ const Product = ( {name, camera, estimatedFlightTime, controlKit, code, price, g
           }
         </div>
         <img className="product__img" src={imageUrl} alt="Drone image" />
-        <FontAwesomeIcon className="product__icon" icon={faScaleBalanced} />
+        <a href=""><FontAwesomeIcon className="product__icon" icon={faScaleBalanced} /></a>
       </div>
       <p className="product__title">{`Agrodrone ${name}`}</p>
       <div className="product__details">

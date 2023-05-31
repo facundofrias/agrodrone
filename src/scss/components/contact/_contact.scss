@@ -1,0 +1,27 @@
+.contact {
+  padding: 1rem;
+
+  & * {
+    text-align: justify;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__location {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__map-container {
+    padding: 1rem 0;
+    align-self: center;
+  }
+
+  &__map {
+    width: 100%;
+  }
+}

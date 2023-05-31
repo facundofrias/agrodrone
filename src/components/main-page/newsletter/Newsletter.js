@@ -30,6 +30,7 @@ const Newsletter = () => {
           <input className="newsletter__input" type="email" placeholder="Email" required />
           <button className="newsletter__button btn-secondary" type="submit">Subscribe</button>
         </form>
+        <p className="newsletter__reminder-news">* We will remind about ourselves no mora than once a week and only with good news</p>
       </div>
     </div>
   )

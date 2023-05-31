@@ -1,9 +1,9 @@
 import './App.scss';
-import Home from "./components/home/index";
-
-// Routes
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./components/home/index";
+import Contact from './components/contact/Contact';
+
 
 function App() {
   return (
@@ -11,6 +11,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exat path="/" element={<Home />} />
+          {/* <Route exat path="/catalog" element={<Catalog />} /> */}
+          <Route exat path="/contact" element={<Contact />} />
+          {/* <Route exat path="/about_us" element={<AboutUs />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

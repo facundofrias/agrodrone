@@ -3,11 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faScaleBalanced, faBox, faBars} from "@fortawesome/free-solid-svg-icons";
 import droneIcon from '../../../assets/img/icons/drone.png';
 import DroneSprayingSection from "../drone-spraying-section/DroneSprayingSection";
+import MenuOption from "./MenuOption";
+
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   
   const [showMenu, setShowMenu] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -36,13 +40,9 @@ const Navbar = () => {
               </div>
             }
             {
-              windowWidth >= 768 && 
-              <div className="desktop-menu">
-                <a className="menu-option" href="#">Home</a>
-                <a className="menu-option" href="#">Catalog</a>
-                <a className="menu-option" href="#">About us</a>
-                <a className="menu-option" href="#">Contact</a>
-              </div>
+              windowWidth >= 768 &&
+              <MenuOption
+              classMenuOption="desktop-menu" />
             }
           </div>
           <div className="second-divisor-container">
@@ -59,17 +59,16 @@ const Navbar = () => {
               <a href=""><FontAwesomeIcon icon={faBox} /></a>
               <a className="hamburger-menu"><FontAwesomeIcon icon={faBars} onClick={toggleMenu}/></a>
               {showMenu && (
-                <div className="mobile-menu">
-                  <a className="menu-option" href="#">Home</a>
-                  <a className="menu-option" href="#">Catalog</a>
-                  <a className="menu-option" href="#">About us</a>
-                  <a className="menu-option" href="#">Contact</a>
-                </div>
+                <MenuOption
+                classMenuOption="mobile-menu" />
               )}
             </div>
           </div>
         </div>
-        <DroneSprayingSection />
+        {
+          location.pathname == "/" &&
+          <DroneSprayingSection />
+        }
       </div>
   )
 }
