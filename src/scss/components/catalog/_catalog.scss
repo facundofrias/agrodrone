@@ -1,0 +1,27 @@
+.product-list {
+  margin: 2rem 0;
+}
+
+.pagination {
+  padding: 1rem 0;
+  &__page {
+    margin: 0 7px;
+    border: 1px solid black;
+    padding: 0 7px;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--secondary);
+    cursor: pointer;
+  }
+
+  &__arrow[disabled] {
+    color: gray;
+    cursor: not-allowed;
+  }
+}
+
+
+.active-page {
+  background-color: var(--secondary);
+  color: #fff;
+}

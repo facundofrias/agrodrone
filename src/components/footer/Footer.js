@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { useState } from "react";
+import MenuOption from "../header/navbar/MenuOption";
 
 const Footer = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,17 +49,9 @@ const Footer = () => {
             }
           </button>
           {isMenuOpen && (
-            <ul className="footer__menu-list">
-              {menuItems.map((item) => (
-                <li
-                  key={item.value}
-                  className="footer__menu-item"
-                  onClick={() => handleLinkClick(item.value)}
-                >
-                  {item.label}
-                </li>
-              ))}
-            </ul>
+            <MenuOption 
+              classMenuOption={"footer__menu-option-toggle"}
+            />
           )}
         </div>
         <div className={`footer__menu ${isSupportOpen ? "open" : ""}`}>
