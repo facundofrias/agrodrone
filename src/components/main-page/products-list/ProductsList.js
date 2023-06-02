@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Product from "../../products/product/Product";
 import { getProducts } from "../../products/getProducts";
 import Loader from "../../utils/loader/Loader";
@@ -60,10 +61,9 @@ const ProductsList = () => {
                 <a className={`products__sale-label${sortBySale ? " products__selected" : ""}`} onClick={handleSortBySale}>Sale</a>
               </div>
               <div className="products__selling-see-all">
-                {/* TODO: navegar a Catalog cuando se hace clic en "See all" */}
-                <a className="products__see-all-label">See all
+                <Link className="products__see-all-label" to={"/catalog"}>See all
                   <FontAwesomeIcon className="products__chevron-right" icon={faChevronRight} />
-                </a>
+                </Link>
               </div>
             </div>
             {

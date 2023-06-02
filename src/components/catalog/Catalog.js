@@ -4,6 +4,8 @@ import Product from "../products/product/Product";
 import Loader from "../utils/loader/Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 const Catalog = () => {
   const [products, setProducts] = useState([]);
@@ -12,6 +14,7 @@ const Catalog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 4;
   const totalPages = Math.ceil(products.length / productsPerPage);
+  const maxPaginationButtons = 3;
 
   useEffect(() => {
     loadProducts();
@@ -19,6 +22,7 @@ const Catalog = () => {
 
   const loadProducts = async () => {
     try {
+      window.scrollTo(0, 0);
       setLoading(true);
       setError(false);
 
@@ -49,55 +53,82 @@ const Catalog = () => {
     return <div>Error al cargar los productos.</div>;
   }
 
-  // Calcular los índices de inicio y fin para la página actual
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
+  // Calcular los índices de inicio y fin para los botones de paginación
+  let startPageIndex = currentPage - Math.floor(maxPaginationButtons / 2);
+  let endPageIndex = currentPage + Math.floor(maxPaginationButtons / 2);
+  
+  if (startPageIndex < 1) {
+    startPageIndex = 1;
+    endPageIndex = startPageIndex + maxPaginationButtons - 1;
+  }
+  
+  if (endPageIndex > totalPages) {
+    endPageIndex = totalPages;
+    startPageIndex = endPageIndex - maxPaginationButtons + 1;
+    if (startPageIndex < 1) {
+      startPageIndex = 1;
+    }
+  }
+
   return (
     <>
+      <Header />
       {loading ? (
         <div className="modal">
           <Loader />
         </div>
       ) : (
-        <div className="product-list">
-          {currentProducts.map((product) => (
-            <Product
-              key={product.id}
-              name={product.name}
-              camera={product.camera}
-              estimatedFlightTime={product.estimatedFlightTime}
-              controlKit={product.controlKit}
-              code={product.code}
-              price={product.price}
-              gps={product.gps}
-              isSale={product.isSale}
-              isTop={product.isTop}
-              imageUrl={product.imageUrl}
-            />
-          ))}
-          <div className="pagination">
-            <a className="pagination__arrow" onClick={handlePreviousPage} disabled={currentPage === 1}>
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </a>
-            {[...Array(Math.ceil(products.length / productsPerPage))].map((_, index) => (
-              <button
-                key={index + 1}
-                onClick={() => setCurrentPage(index + 1)}
-                className={`pagination__page${currentPage === index + 1 ? " active-page" : ""}`}
-              >
-                {index + 1}
-              </button>
+        <>
+          <div className="product-list">
+            {currentProducts.map((product) => (
+              <Product
+                key={product.id}
+                name={product.name}
+                camera={product.camera}
+                estimatedFlightTime={product.estimatedFlightTime}
+                controlKit={product.controlKit}
+                code={product.code}
+                price={product.price}
+                gps={product.gps}
+                isSale={product.isSale}
+                isTop={product.isTop}
+                imageUrl={product.imageUrl}
+              />
             ))}
-            <a className="pagination__arrow" onClick={handleNextPage} disabled={currentPage === totalPages}>
-              <FontAwesomeIcon icon={faChevronRight} />
-            </a>
+            <div className="pagination">
+              <a className="pagination__arrow" onClick={handlePreviousPage} disabled={currentPage === 1}>
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </a>
+              {[...Array(endPageIndex - startPageIndex + 1)].map((_, index) => {
+                const pageNumber = startPageIndex + index;
+                return (
+                  <button
+                    key={pageNumber}
+                    onClick={() => setCurrentPage(pageNumber)}
+                    className={`pagination__page${currentPage === pageNumber ? " active-page" : ""}`}
+                  >
+                    {pageNumber}
+                  </button>
+                );
+              })}
+              <a className="pagination__arrow" onClick={handleNextPage} disabled={currentPage === totalPages}>
+                <FontAwesomeIcon icon={faChevronRight} />
+              </a>
+            </div>
           </div>
-        </div>
+          <div>
+            
+          </div>
+        </> 
       )}
+      <Footer />
     </>
   );
+  
 };
 
 export default Catalog;

@@ -4,6 +4,7 @@
 
 .pagination {
   padding: 1rem 0;
+  
   &__page {
     margin: 0 7px;
     border: 1px solid black;
@@ -12,6 +13,11 @@
     font-weight: 600;
     color: var(--secondary);
     cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      background-color: var(--subsidiary);
+    }
   }
 
   &__arrow[disabled] {
@@ -20,8 +26,7 @@
   }
 }
 
-
 .active-page {
-  background-color: var(--secondary);
   color: #fff;
+  background-color: var(--secondary);
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faScaleBalanced, faBox, faBars} from "@fortawesome/free-solid-svg-icons";
 import droneIcon from '../../../assets/img/icons/drone.png';
@@ -35,8 +36,8 @@ const Navbar = () => {
           <div className="first-divisor-container">
             { windowWidth < 768 && 
               <div className="assistant-group-container">
-                <a href=""><img className="drone-icon" src={droneIcon} alt="Drone icon" /></a>
-                <a href=""><span className="assistant-group">Assisant gruop</span></a>
+                <Link to={"/"}><img className="drone-icon" src={droneIcon} alt="Drone icon" /></Link>
+                <Link to={"/"}><span className="assistant-group">Assisant gruop</span></Link>
               </div>
             }
             {
