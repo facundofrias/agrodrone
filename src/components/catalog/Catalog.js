@@ -7,6 +7,8 @@ import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
+import { IconAdjustmentsHorizontal, IconChevronDown, IconChevronUp, IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+
 const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,6 +17,7 @@ const Catalog = () => {
   const productsPerPage = 4;
   const totalPages = Math.ceil(products.length / productsPerPage);
   const maxPaginationButtons = 3;
+  const [menuOption, setMenuOption] = useState(false);
 
   useEffect(() => {
     loadProducts();
@@ -25,6 +28,7 @@ const Catalog = () => {
       window.scrollTo(0, 0);
       setLoading(true);
       setError(false);
+      setMenuOption(false);
 
       const fetchedProducts = await getProducts();
       setProducts(fetchedProducts);
@@ -36,6 +40,10 @@ const Catalog = () => {
       console.error("Error al cargar los productos:", error);
     }
   };
+
+  const handleMenuOptionOpen = () => {
+    setMenuOption(!menuOption);
+  }
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
@@ -83,6 +91,28 @@ const Catalog = () => {
         </div>
       ) : (
         <>
+          <div className="filter-options">
+            <button className="filter-options__btn" 
+            onClick={handleMenuOptionOpen}>
+              <IconAdjustmentsHorizontal />
+              Filtrar
+              {
+                menuOption ? (
+                  <IconChevronUp viewBox="0 0 24 18" />
+                ) : (
+                  <IconChevronDown viewBox="0 0 24 18" />
+                )
+              }
+            </button>
+            {
+              menuOption && 
+              <div className="filter-options__list">
+                <div>1 opciones</div>
+                <div>3 opciones</div>
+                <div>3 opciones</div>
+              </div>
+            }
+          </div>
           <div className="product-list">
             {currentProducts.map((product) => (
               <Product
@@ -101,7 +131,7 @@ const Catalog = () => {
             ))}
             <div className="pagination">
               <a className="pagination__arrow" onClick={handlePreviousPage} disabled={currentPage === 1}>
-                <FontAwesomeIcon icon={faChevronLeft} />
+                <IconChevronLeft viewBox={"0 0 24 14"}/>
               </a>
               {[...Array(endPageIndex - startPageIndex + 1)].map((_, index) => {
                 const pageNumber = startPageIndex + index;
@@ -116,7 +146,7 @@ const Catalog = () => {
                 );
               })}
               <a className="pagination__arrow" onClick={handleNextPage} disabled={currentPage === totalPages}>
-                <FontAwesomeIcon icon={faChevronRight} />
+                <IconChevronRight viewBox={"0 0 24 14"}/>
               </a>
             </div>
           </div>

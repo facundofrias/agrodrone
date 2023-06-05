@@ -20,6 +20,10 @@
     }
   }
 
+  &__arrow svg {
+    
+  }
+
   &__arrow[disabled] {
     color: gray;
     cursor: not-allowed;
@@ -29,4 +33,29 @@
 .active-page {
   color: #fff;
   background-color: var(--secondary);
+}
+
+.filter-options {
+  padding: 1rem 10px;
+  display: flex;
+  justify-content: end;
+
+  &__btn,
+  & svg {
+    margin: 0 3px;
+  }
+
+  &__btn{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__list {
+    position: absolute;
+    top: 90px;
+    background-color: var(--subsidiary);
+    right: 18px;
+    z-index: 1;
+  }
 }
