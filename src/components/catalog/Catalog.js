@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { getProducts } from "../products/getProducts";
 import Product from "../products/product/Product";
 import Loader from "../utils/loader/Loader";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import CustomSelect from "../custom-select/CustomSelect";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
@@ -107,7 +106,11 @@ const Catalog = () => {
             {
               menuOption && 
               <div className="filter-options__list">
-                <div>1 opciones</div>
+                <CustomSelect 
+                options={[
+                  { value: "opcion1", label: "Opción 1" },
+                  { value: "opcion2", label: "Opción 2" }
+                ]}/>
                 <div>3 opciones</div>
                 <div>3 opciones</div>
               </div>

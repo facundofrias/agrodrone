@@ -2,6 +2,7 @@
   position: relative;
   width: 187px;
   margin: 0 auto;
+  color: black;
 
   .select-box {
     display: flex;
@@ -15,10 +16,6 @@
     outline: none;
     position: relative;
     transition: border-color 0.3s ease;
-
-    &:hover {
-      border-color: #28572D;
-    }
   }
 
   .select-box.open {
@@ -55,14 +52,16 @@
       padding: 8px 12px;
       cursor: pointer;
 
-      &:hover {
-        background-color: var(--main);
-      }
-
       &.selected {
         font-weight: 600;
         background-color: #f5f5f5;
       }
+      
+      &:hover {
+        background-color: var(--subsidiary);
+        color: var(--main);
+      }
+
     }
   }
 }

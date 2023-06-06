@@ -35,7 +35,7 @@ const CustomSelect = ( { options = [] }) => {
           {allOptions.map((option) => (
             <li
               key={option.value}
-              className={`option ${selectedOption === option ? "selected" : ""}`}
+              className={`option${selectedOption === option ? " selected" : ""}`}
               onClick={() => handleOptionChange(option)}
             >
               {option.label}

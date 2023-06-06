@@ -52,8 +52,10 @@
   }
 
   &__list {
+    padding: 3px;
     position: absolute;
     top: 90px;
+    color: var(--main);
     background-color: var(--subsidiary);
     right: 18px;
     z-index: 1;
