@@ -110,9 +110,10 @@ const Catalog = () => {
                 options={[
                   { value: "opcion1", label: "Opción 1" },
                   { value: "opcion2", label: "Opción 2" }
-                ]}/>
-                <div>3 opciones</div>
-                <div>3 opciones</div>
+                ]}
+                textToShow="Manufacturer"
+                asList={false}
+                asRadio={false}/>
               </div>
             }
           </div>
