@@ -7,6 +7,7 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
 import { IconAdjustmentsHorizontal, IconChevronDown, IconChevronUp, IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import Modal from "../utils/modal/Modal";
 
 const Catalog = () => {
   const [products, setProducts] = useState([]);
@@ -113,10 +114,40 @@ const Catalog = () => {
                 ]}
                 textToShow="Manufacturer"
                 asList={false}
-                asRadio={false}/>
+                asRadio={false}
+                />
+                <CustomSelect 
+                options={[
+                  { value: "opcion1", label: "4 pcs" },
+                  { value: "opcion2", label: "6 pcs" },
+                  { value: "opcion2", label: "8 pcs" }
+                ]}
+                textToShow={"Number of screws"}
+                asList={false}
+                asRadio={false}
+                />
+                <CustomSelect 
+                options={[
+                  { value: "opcion1", label: "Higher" },
+                  { value: "opcion2", label: "Lower" }
+                ]}
+                textToShow={"Price"}
+                asList={false}
+                asRadio={true}
+                />
+                <CustomSelect 
+                options={[
+                  { value: "opcion1", label: "Yes" },
+                  { value: "opcion2", label: "No" }
+                ]}
+                textToShow={"GPS"}
+                asList={false}
+                asRadio={true}
+                />
               </div>
             }
           </div>
+          { menuOption && <Modal /> }
           <div className="product-list">
             {currentProducts.map((product) => (
               <Product

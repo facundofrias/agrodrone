@@ -39,6 +39,9 @@
   padding: 1rem 10px;
   display: flex;
   justify-content: end;
+  background-color: var(--main);
+  position: relative;
+  z-index: 2;
 
   &__btn,
   & svg {
@@ -54,10 +57,9 @@
   &__list {
     padding: 3px;
     position: absolute;
-    top: 90px;
+    top: 42px;
     color: var(--main);
     background-color: var(--subsidiary);
     right: 18px;
-    z-index: 1;
   }
 }

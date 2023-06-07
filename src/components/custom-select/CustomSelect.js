@@ -6,14 +6,8 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 const CustomSelect = ({ options = [], textToShow, asList = false, asRadio = false }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
   
-  const allOptions = [{ value: "", label: textToShow }, ...options];
+  const allOptions = [...options];
 
   const handleOptionChange = (value) => {
     setSelectedOption(value);
@@ -104,8 +98,8 @@ const CustomSelect = ({ options = [], textToShow, asList = false, asRadio = fals
               <input
                 type="checkbox"
                 value={option.value}
-                checked={selectedOption === option}
-                onChange={() => handleCheckboxChange()}
+                // checked={selectedOption === option}
+                onChange={() => handleOptionChange(option)}
                 className="radio-checkbox-btn"
               />
               {option.label}
