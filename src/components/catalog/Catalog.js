@@ -144,6 +144,16 @@ const Catalog = () => {
                 asList={false}
                 asRadio={true}
                 />
+                
+                <CustomSelect 
+                options={[
+                  { value: "opcion1", label: "Popular" },
+                  { value: "opcion2", label: "Sale" }
+                ]}
+                textToShow={"Sort by"}
+                asList={false}
+                asRadio={true}
+                />
               </div>
             }
           </div>

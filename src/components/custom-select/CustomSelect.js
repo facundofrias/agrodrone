@@ -6,7 +6,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 const CustomSelect = ({ options = [], textToShow, asList = false, asRadio = false }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const allOptions = [...options];
 
   const handleOptionChange = (value) => {
@@ -65,7 +65,7 @@ const CustomSelect = ({ options = [], textToShow, asList = false, asRadio = fals
               <label key={option.value} className="option">
                 <input
                   type="radio"
-                  name="custom-select-radio"
+                  name={`${textToShow.replace(/\s+/g, "-").toLowerCase()}-radio`}
                   value={option.value}
                   checked={selectedOption === option}
                   onChange={() => handleOptionChange(option)}
